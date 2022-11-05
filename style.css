@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+body{
+    font-size: 15px;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    margin: .5rem;
+    background-color: var(--Very-Light-Gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main h1{
+    text-align: center;
+    font-weight: 200;
+}
+main h2{
+    text-align: center;
+    font-size: 30px;
+    color: var(--Very-Dark-Blue);
+}
+main > p{
+    text-align: center;
+    color: var(--Grayish-Blue);
+    max-width: 500px;
+    margin:.75rem auto;
+}
+.container{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-rows: repeat(4 ,1fr);
+    gap: 30px;
+    padding: 1rem 0;
+}
+.container .col{
+    background-color:  white;
+    width: 300px;
+    height: 220px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, .1);
+    padding: 20px;
+    position: relative;
+    border-radius: 5px; 
+    overflow: hidden;
+}
+.container .col::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+}
+.container .supervisor::before{
+    background-color:var(--Cyan);
+}
+.container .team::before{
+    background-color: var(--Red);
+}
+.container .karma::before{
+    background-color: var(--Orange);
+}
+.container .calc::before{
+    background-color: var(--Blue);
+}
+.col img{
+    display: block;
+    margin-left: auto;
+    margin-top: 1rem;
+}
+.col h3{
+    color: var(--Very-Dark-Blue);
+}
+.col p{
+    color: var(--Grayish-Blue);
+    font-size: .9rem;
+    margin-top: .75rem;
+}
+.supervisor{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.team{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+.karma {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+.calc{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+@media (min-width:768px) and (max-width:992px){
+    main h1 ,main h2{
+        font-size: 25px;
+    }
+    main > p{
+        width: 450px;
+    }
+    .container{
+        display:flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+}
+@media( min-width:375px) and (max-width:767px){
+    main h1 ,main h2{
+        font-size: 22px;
+    }
+    main > p{
+        width: 350px;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
